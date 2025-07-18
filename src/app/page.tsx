@@ -68,13 +68,6 @@ const projects = [
   },
 ];
 
-const skills = [
-  { name: "HTML", icon: <CodeXml className="size-8" />, level: 95 },
-  { name: "CSS", icon: <Palette className="size-8" />, level: 90 },
-  { name: "JavaScript", icon: <Braces className="size-8" />, level: 85 },
-  { name: "Python", icon: <Code className="size-8" />, level: 80 },
-];
-
 export default async function Home() {
   const { greetings } = await generateGreeting({ name: "Visitor" });
 
@@ -226,7 +219,7 @@ export default async function Home() {
                 </div>
               </div>
               <div className="mx-auto mt-12 max-w-4xl">
-                <Skills skills={skills} />
+                <Skills />
               </div>
             </div>
           </section>
