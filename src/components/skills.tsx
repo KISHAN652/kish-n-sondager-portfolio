@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Progress } from "@/components/ui/progress";
 import { cn } from "@/lib/utils";
+import { Braces, Code, CodeXml, Palette } from "lucide-react";
 
 type Skill = {
   name: string;
@@ -10,7 +11,14 @@ type Skill = {
   level: number;
 };
 
-export function Skills({ skills }: { skills: Skill[] }) {
+const skills: Skill[] = [
+  { name: "HTML", icon: <CodeXml className="size-8" />, level: 95 },
+  { name: "CSS", icon: <Palette className="size-8" />, level: 90 },
+  { name: "JavaScript", icon: <Braces className="size-8" />, level: 85 },
+  { name: "Python", icon: <Code className="size-8" />, level: 80 },
+];
+
+export function Skills() {
   const [isVisible, setVisible] = useState(false);
   const domRef = useRef<HTMLDivElement>(null);
 
@@ -19,6 +27,7 @@ export function Skills({ skills }: { skills: Skill[] }) {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setVisible(true);
+          observer.unobserve(entry.target);
         }
       });
     });
