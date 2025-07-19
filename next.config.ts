@@ -1,6 +1,7 @@
-import type { NextConfig } from 'next';
+import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
+  /* config options here */
   env: {
     GOOGLE_API_KEY: process.env.GOOGLE_API_KEY,
     RESEND_API_KEY: process.env.RESEND_API_KEY,
@@ -21,11 +22,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  experimental: {
-    optimizeCss: true,
-    appDir: true,
-  },
-  // Remove the entire webpack configuration
 };
 
 export default nextConfig;
