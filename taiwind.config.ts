@@ -1,7 +1,5 @@
-
-import type {Config} from 'tailwindcss';
-
-const { fontFamily } = require("tailwindcss/defaultTheme")
+import type { Config } from 'tailwindcss';
+import { fontFamily } from 'tailwindcss/defaultTheme';
 
 const config: Config = {
   darkMode: ['class'],
@@ -9,19 +7,19 @@ const config: Config = {
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-	],
+  ],
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: '2rem',
       screens: {
-        "2xl": "1400px",
+        '2xl': '1400px',
       },
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-inter)", ...fontFamily.sans],
-        display: ["var(--font-poppins)", ...fontFamily.sans],
+        sans: ['var(--font-inter)', ...fontFamily.sans],
+        display: ['var(--font-poppins)', ...fontFamily.sans],
       },
       colors: {
         background: 'hsl(var(--background))',
@@ -100,20 +98,20 @@ const config: Config = {
           },
         },
         'fade-in-up': {
-            '0%': {
-                opacity: '0',
-                transform: 'translateY(10px)'
-            },
-            '100%': {
-                opacity: '1',
-                transform: 'translateY(0)'
-            }
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(10px)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
         },
         'background-pan': {
           '0%': { backgroundPosition: '0% 50%' },
           '50%': { backgroundPosition: '100% 50%' },
           '100%': { backgroundPosition: '0% 50%' },
-        }
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -126,5 +124,4 @@ const config: Config = {
   },
   plugins: [require('tailwindcss-animate')],
 };
-
 export default config;
